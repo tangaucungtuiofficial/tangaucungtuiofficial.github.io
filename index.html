@@ -6,9 +6,9 @@
     <title>Chào mừng bạn!</title>
     
     <script>
-        /* 1. CHẶN HIỆN LẠI LẦN 2: Nếu đã xem rồi thì đẩy thẳng vào Google Sites ngay lập tức */
+        /* CHẶN HIỆN LẠI LẦN 2: Nếu đã vào rồi thì nhảy thẳng vào Google Sites */
         const FINAL_DESTINATION = "https://sites.google.com/view/tangaucungtui";
-        if (sessionStorage.getItem('visited_nin')) {
+        if (sessionStorage.getItem('visited_tangau')) {
             window.location.replace(FINAL_DESTINATION);
         }
     </script>
@@ -36,16 +36,21 @@
         .highlight { color: #f6ad55; font-weight: bold; font-size: 24px; text-transform: uppercase; display: block; margin: 10px 0; }
         .ads-box { margin: 20px auto; width: 100%; min-height: 250px; background: rgba(255,255,255,0.1); border-radius: 15px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
         
-        /* NÚT VÀO NHẬN NGAY - ĐÚNG Ý ÔNG */
+        /* NÚT VÀO NHẬN NGAY - TO VÀ RÕ */
         .btn-claim { 
-            background: #48bb78; color: white; border: none; padding: 15px 40px; 
-            font-size: 18px; font-weight: bold; border-radius: 50px; cursor: pointer; 
-            margin-top: 20px; text-decoration: none; display: inline-block; 
-            transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            background: #48bb78; color: white; border: none; padding: 18px 50px; 
+            font-size: 20px; font-weight: bold; border-radius: 50px; cursor: pointer; 
+            margin-top: 10px; text-decoration: none; display: inline-block; 
+            transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite; /* Hiệu ứng nhấp nháy cho nút */
         }
-        .btn-claim:hover { background: #38a169; transform: scale(1.05); }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
 
-        /* LỚP BỌC TÀNG HÌNH TOÀN MÀN HÌNH (BAO BỌC WEBSITE) */
+        /* LỚP BỌC TÀNG HÌNH TOÀN MÀN HÌNH */
         #ad-layer {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; 
             z-index: 99999; cursor: pointer; background: rgba(0,0,0,0);
@@ -54,52 +59,4 @@
 </head>
 <body>
 
-    <div id="ad-layer" onclick="handleAd()"></div>
-
-    <div id="main-body" class="container">
-        <h1>🏠 "Chào mừng bạn ghé thăm nhà của tui nha! Tui là Nin – Người đồng hành cùng trải nghiệm số của bạn."</h1>
-        
-        <p>Vui lòng đợi giây lát để nhận...</p>
-        <span class="highlight">1024 GB DUNG LƯỢNG</span>
-        <p>lưu trữ tài liệu miễn phí vĩnh viễn.</p>
-
-        <div class="ads-box">
-             <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9"></div>
-        </div>
-
-        <p style="font-size: 14px; opacity: 0.8;">Hệ thống tự động chuyển hướng sau (<span id="timer">15</span>s)...</p>
-        
-        <button onclick="goNow()" class="btn-claim">🎁 VÀO NHẬN NGAY LẬP TỨC</button>
-    </div>
-
-    <script>
-        // Hiện nội dung nếu là lần đầu tiên
-        if (!sessionStorage.getItem('visited_nin')) {
-            document.getElementById('main-body').style.display = 'block';
-        }
-
-        // 1. Hàm bọc quảng cáo (click đầu tiên)
-        function handleAd() {
-            window.open('https://www.effectivegatecpm.com/v4huzy068?key=d0119603befa4a39f5f4a88cbc7ad840', '_blank');
-            document.getElementById('ad-layer').style.display = 'none'; // Click xong 1 lần thì ẩn lớp tàng hình
-        }
-
-        // 2. Hàm chuyển hướng và lưu trạng thái để không hiện lại ảnh này
-        function goNow() {
-            sessionStorage.setItem('visited_nin', 'true');
-            window.location.replace(FINAL_DESTINATION);
-        }
-
-        // 3. Đếm ngược tự động 15 giây
-        var time = 15;
-        var cd = setInterval(function() {
-            time--;
-            if(document.getElementById('timer')) document.getElementById('timer').innerText = time;
-            if (time <= 0) {
-                clearInterval(cd);
-                goNow();
-            }
-        }, 1000);
-    </script>
-</body>
-</html>
+    <div id="ad-layer
