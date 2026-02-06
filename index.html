@@ -12,100 +12,101 @@
             margin: 0; padding: 0; 
             display: flex; flex-direction: column; justify-content: center; align-items: center; 
             min-height: 100vh; 
-            /* Màu Gradient chuẩn như ảnh mẫu */
             background: linear-gradient(180deg, #8593fb 0%, #766dff 100%); 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             color: white; 
             text-align: center; 
-            overflow: hidden; /* Không cho cuộn trang để khách tập trung vào quảng cáo */
-        }
-        .container { 
-            background: rgba(255, 255, 255, 0.15); 
-            padding: 35px 25px; 
-            border-radius: 30px; 
-            backdrop-filter: blur(15px); 
-            width: 85%; 
-            max-width: 420px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            z-index: 10; /* Đảm bảo nội dung nằm dưới tấm lưới click nhưng vẫn thấy rõ */
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        h1 { font-size: 22px; line-height: 1.4; margin-bottom: 20px; font-weight: bold; }
-        .sub-text { font-size: 15px; margin-bottom: 5px; opacity: 0.9; }
-        .highlight { color: #ffcc00; font-weight: 900; font-size: 24px; text-transform: uppercase; margin: 10px 0; display: block; }
-        
-        /* KHUNG CHỨA QUẢNG CÁO BANNER */
-        .ads-box { 
-            margin: 25px auto; 
-            width: 100%; 
-            min-height: 250px; 
-            background: rgba(255, 255, 255, 0.1); 
-            border-radius: 20px; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
         }
+        .container { 
+            background: rgba(255, 255, 255, 0.12); 
+            padding: 30px 20px; 
+            border-radius: 30px; 
+            backdrop-filter: blur(15px); 
+            width: 88%; 
+            max-width: 420px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 10;
+        }
+        h1 { font-size: 24px; line-height: 1.4; margin-bottom: 20px; font-weight: bold; }
+        .highlight { color: #ffcc00; font-weight: 900; font-size: 22px; text-transform: uppercase; margin: 10px 0; display: block; }
+        
+        /* KHUNG QUẢNG CÁO HIỆN ẢNH */
+        .ads-wrapper { 
+            margin: 20px auto; 
+            width: 100%; 
+            min-height: 250px; 
+            background: rgba(255, 255, 255, 0.08); 
+            border-radius: 20px; 
+            display: flex; align-items: center; justify-content: center;
+        }
 
-        .redirect-info { font-size: 14px; margin-top: 20px; font-style: italic; opacity: 0.8; }
-        #timer { font-weight: bold; color: #ffcc00; font-size: 18px; }
+        /* NÚT VÀO NHẬN NGAY */
+        .btn-claim {
+            background: #48bb78;
+            color: white;
+            padding: 15px 35px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-claim:hover { background: #38a169; transform: scale(1.05); }
+
+        #timer-text { font-size: 14px; margin-top: 15px; opacity: 0.8; font-style: italic; }
+        #timer { font-weight: bold; color: #ffcc00; }
 
         /* LỚP BỌC TÀNG HÌNH TOÀN MÀN HÌNH */
-        #invisible-layer {
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100vw; 
-            height: 100vh; 
-            z-index: 99999; /* Nằm trên cùng để bắt cú click đầu tiên */
-            cursor: pointer;
-            background: rgba(0,0,0,0); /* Trong suốt hoàn toàn */
+        #global-overlay {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; 
+            z-index: 99999; cursor: pointer; background: rgba(0,0,0,0);
         }
     </style>
 </head>
 <body>
 
-    <div id="invisible-layer" onclick="handleFirstClick();"></div>
+    <div id="global-overlay" onclick="triggerAd();"></div>
 
     <div class="container">
-        <h1>🏠 "Chào mừng bạn ghé thăm nhà của tui nha! Tui là Nin – Người đồng hành cùng trải nghiệm số của bạn."</h1>
+        <h1>🏠 "Chào mừng bạn ghé thăm nhà của tui nha! Tui là Nin – Người đồng hành cùng bạn."</h1>
         
-        <div class="sub-text">Vui lòng đợi giây lát để nhận...</div>
-        <div class="highlight">1024 GB DUNG LƯỢNG</div>
-        <div class="sub-text">lưu trữ tài liệu miễn phí vĩnh viễn.</div>
+        <p>Vui lòng đợi giây lát để nhận...</p>
+        <span class="highlight">1024 GB DUNG LƯỢNG</span>
+        <p>lưu trữ tài liệu miễn phí vĩnh viễn.</p>
 
-        <div class="ads-box">
-             <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9">
-                 <p style="font-size: 12px;">Đang tải nội dung ưu đãi...</p>
-             </div>
+        <div class="ads-wrapper">
+             <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9"></div>
         </div>
 
-        <div class="redirect-info">
-            Hệ thống đang chuyển hướng tự động (<span id="timer">15</span>s)...
+        <a href="https://sites.google.com/view/tangaucungtui" class="btn-claim">🎁 VÀO NHẬN NGAY LẬP TỨC</a>
+
+        <div id="timer-text">
+            Hoặc tự động chuyển hướng sau (<span id="timer">15</span>s)...
         </div>
     </div>
 
     <script>
-        // HÀM XỬ LÝ KHI KHÁCH CLICK BẤT KỲ ĐÂU (BỌC TÀNG HÌNH)
-        function handleFirstClick() {
-            // Mở link quảng cáo Direct Link của ông
+        // HÀM KÍCH HOẠT QUẢNG CÁO KHI CLICK BẤT KỲ ĐÂU
+        function triggerAd() {
             window.open('https://www.effectivegatecpm.com/v4huzy068?key=d0119603befa4a39f5f4a88cbc7ad840', '_blank');
-            // Sau khi click thì xóa tấm lưới đi để không làm phiền nữa
-            document.getElementById('invisible-layer').style.display = 'none';
+            document.getElementById('global-overlay').style.display = 'none';
         }
 
-        // HÀM ĐẾM NGƯỢC VÀ TỰ ĐỘNG CHUYỂN HƯỚNG
+        // HÀM TỰ ĐỘNG CHUYỂN HƯỚNG
         var timeLeft = 15;
-        var timerElement = document.getElementById('timer');
-        
         var countdown = setInterval(function() {
             timeLeft--;
-            timerElement.textContent = timeLeft;
-            
+            document.getElementById('timer').textContent = timeLeft;
             if (timeLeft <= 0) {
                 clearInterval(countdown);
-                // CHUYỂN HƯỚNG VÀO WEBSITE ĐÍCH CỦA ÔNG
-                window.location.href = "https://sites.google.com/view/discoverywithme";
+                window.location.href = "https://sites.google.com/view/tangaucungtui";
             }
         }, 1000);
     </script>
