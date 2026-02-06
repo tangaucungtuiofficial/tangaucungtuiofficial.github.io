@@ -6,57 +6,80 @@
     <title>Chào mừng bạn!</title>
     
     <script>
-        /* CHẶN HIỆN LẠI LẦN 2: Nếu đã vào rồi thì nhảy thẳng vào Google Sites */
-        const FINAL_DESTINATION = "https://sites.google.com/view/tangaucungtui";
-        if (sessionStorage.getItem('visited_tangau')) {
-            window.location.replace(FINAL_DESTINATION);
+        /* CHẶN HIỆN LẠI: Nếu đã từng bấm vào trang rồi thì nhảy thẳng web chính */
+        const WEB_DICH = "https://sites.google.com/view/tangaucungtui";
+        if (sessionStorage.getItem('da_xem_trang')) {
+            window.location.replace(WEB_DICH);
         }
     </script>
 
     <script async="async" data-cfasync="false" src="https://pl28656382.effectivegatecpm.com/15c0cdf511a57cf02c31f89f15bdf9d9/invoke.js"></script>
 
     <style>
-        /* Mặc định ẩn nội dung để tránh bị chớp hình */
-        #main-body { display: none; }
+        /* Ẩn nội dung để tránh bị giật hình */
+        #ui-main { display: none; }
 
         body { 
-            margin: 0; padding: 0; 
-            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; 
             min-height: 100vh; 
             background: linear-gradient(180deg, #7f9cf5 0%, #667eea 50%, #b388ff 100%); 
-            font-family: 'Segoe UI', Tahoma, sans-serif; color: white; text-align: center; 
-            overflow: hidden;
+            font-family: sans-serif; color: white; text-align: center; overflow: hidden;
         }
         .container { 
-            background: rgba(255, 255, 255, 0.15); padding: 30px 20px; border-radius: 20px; 
-            backdrop-filter: blur(10px); width: 90%; max-width: 450px; 
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2); z-index: 10;
+            background: rgba(255, 255, 255, 0.2); padding: 30px 20px; border-radius: 25px; 
+            backdrop-filter: blur(12px); width: 90%; max-width: 420px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); z-index: 10;
         }
-        h1 { font-size: 22px; line-height: 1.4; margin-bottom: 20px; font-weight: bold; }
-        .highlight { color: #f6ad55; font-weight: bold; font-size: 24px; text-transform: uppercase; display: block; margin: 10px 0; }
-        .ads-box { margin: 20px auto; width: 100%; min-height: 250px; background: rgba(255,255,255,0.1); border-radius: 15px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        h1 { font-size: 22px; margin-bottom: 15px; font-weight: bold; }
+        .highlight { color: #ffeb3b; font-weight: 900; font-size: 24px; display: block; margin: 10px 0; }
+        .ads-box { margin: 15px auto; width: 100%; min-height: 250px; background: rgba(255,255,255,0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
         
-        /* NÚT VÀO NHẬN NGAY - TO VÀ RÕ */
-        .btn-claim { 
-            background: #48bb78; color: white; border: none; padding: 18px 50px; 
+        /* NÚT VÀO NHẬN NGAY - ĐẬM VÀ TO */
+        .btn-fast { 
+            background: #2ecc71; color: white; border: none; padding: 18px 0; width: 100%;
             font-size: 20px; font-weight: bold; border-radius: 50px; cursor: pointer; 
-            margin-top: 10px; text-decoration: none; display: inline-block; 
-            transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            animation: pulse 2s infinite; /* Hiệu ứng nhấp nháy cho nút */
+            margin-top: 20px; text-decoration: none; display: block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.2s;
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
+        .btn-fast:active { transform: scale(0.95); }
 
-        /* LỚP BỌC TÀNG HÌNH TOÀN MÀN HÌNH */
-        #ad-layer {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; 
-            z-index: 99999; cursor: pointer; background: rgba(0,0,0,0);
-        }
+        /* LỚP BỌC TÀNG HÌNH TOÀN TRANG */
+        #ad-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 99999; cursor: pointer; background: rgba(0,0,0,0); }
     </style>
 </head>
 <body>
 
-    <div id="ad-layer
+    <div id="ad-overlay" onclick="triggerPop()"></div>
+
+    <div id="ui-main" class="container">
+        <h1>🏠 Chào mừng bạn đến với tangaucungtui!</h1>
+        <p>Tài liệu của bạn đã sẵn sàng:</p>
+        <span class="highlight">1024 GB MIỄN PHÍ</span>
+
+        <div class="ads-box">
+             <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9"></div>
+        </div>
+        
+        <button onclick="goDestination()" class="btn-fast">🎁 VÀO NHẬN NGAY</button>
+    </div>
+
+    <script>
+        // Hiện giao diện nếu chưa vào lần nào
+        if (!sessionStorage.getItem('da_xem_trang')) {
+            document.getElementById('ui-main').style.display = 'block';
+        }
+
+        // Bọc click tàng hình (chỉ nổ 1 lần đầu)
+        function triggerPop() {
+            window.open('https://www.effectivegatecpm.com/v4huzy068?key=d0119603befa4a39f5f4a88cbc7ad840', '_blank');
+            document.getElementById('ad-overlay').style.display = 'none';
+        }
+
+        // Nhảy thẳng web đích và ghi nhớ
+        function goDestination() {
+            sessionStorage.setItem('da_xem_trang', 'true');
+            window.location.replace(WEB_DICH);
+        }
+    </script>
+</body>
+</html>
