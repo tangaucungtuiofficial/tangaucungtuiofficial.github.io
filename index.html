@@ -1,11 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chào mừng bạn ghé thăm!</title>
+    <title>Chào mừng bạn!</title>
     
+    <script>
+        // KIỂM TRA XEM ĐÃ XEM TRANG CHÀO MỪNG CHƯA
+        if (sessionStorage.getItem('visited')) {
+            window.location.href = "https://sites.google.com/view/tangaucungtui";
+        }
+    </script>
+
     <script async="async" data-cfasync="false" src="https://pl28656382.effectivegatecpm.com/15c0cdf511a57cf02c31f89f15bdf9d9/invoke.js"></script>
 
     <style>
@@ -13,113 +19,68 @@
             margin: 0; padding: 0; 
             display: flex; flex-direction: column; justify-content: center; align-items: center; 
             min-height: 100vh; 
-            /* Màu Gradient chuẩn tím xanh theo ảnh mẫu */
             background: linear-gradient(180deg, #8593fb 0%, #766dff 100%); 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            color: white; 
-            text-align: center; 
-            overflow: hidden;
+            color: white; text-align: center; overflow: hidden;
         }
         .container { 
-            background: rgba(255, 255, 255, 0.12); 
-            padding: 25px 20px; 
-            border-radius: 30px; 
-            backdrop-filter: blur(15px); 
-            width: 88%; 
-            max-width: 420px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.12); padding: 25px; border-radius: 30px; 
+            backdrop-filter: blur(15px); width: 88%; max-width: 420px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2); border: 1px solid rgba(255, 255, 255, 0.2);
             z-index: 10;
         }
-        h1 { font-size: 24px; line-height: 1.3; margin-bottom: 20px; font-weight: bold; }
-        .sub-text { font-size: 15px; margin-bottom: 5px; opacity: 0.9; }
+        h1 { font-size: 24px; line-height: 1.4; margin-bottom: 20px; font-weight: bold; }
         .highlight { color: #ffcc00; font-weight: 900; font-size: 22px; text-transform: uppercase; margin: 10px 0; display: block; }
-        
-        /* KHUNG QUẢNG CÁO HIỆN ẢNH BANNER */
-        .ads-wrapper { 
-            margin: 20px auto; 
-            width: 100%; 
-            min-height: 250px; 
-            background: rgba(255, 255, 255, 0.08); 
-            border-radius: 20px; 
-            display: flex; align-items: center; justify-content: center;
-            overflow: hidden;
-        }
-
-        /* NÚT VÀO NHẬN NGAY LẬP TỨC */
+        .ads-wrapper { margin: 20px auto; width: 100%; min-height: 250px; background: rgba(255, 255, 255, 0.08); border-radius: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
         .btn-claim {
-            background: #48bb78; /* Màu xanh lá chuẩn ảnh */
-            color: white;
-            padding: 15px 0;
-            width: 100%;
-            max-width: 350px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 50px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px auto 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            border: none;
-            cursor: pointer;
-            z-index: 100;
+            background: #48bb78; color: white; padding: 15px 0; width: 100%; max-width: 350px;
+            font-size: 18px; font-weight: bold; border-radius: 50px; text-decoration: none;
+            display: flex; align-items: center; justify-content: center; margin: 20px auto 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: none; cursor: pointer;
         }
-        .btn-claim:hover { background: #38a169; transform: scale(1.02); }
-
-        .redirect-info { font-size: 14px; margin-top: 20px; opacity: 0.8; font-style: italic; }
-        #timer { font-weight: bold; color: #ffcc00; }
-
-        /* LỚP BỌC TÀNG HÌNH TOÀN MÀN HÌNH */
-        #global-ad-overlay {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; 
-            z-index: 99999; cursor: pointer; background: rgba(0,0,0,0);
-        }
+        #timer-info { font-size: 14px; margin-top: 20px; opacity: 0.8; }
+        #global-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 99999; cursor: pointer; background: rgba(0,0,0,0); }
     </style>
 </head>
 <body>
 
-    <div id="global-ad-overlay" onclick="handleAdClick();"></div>
+    <div id="global-overlay" onclick="handleAdClick();"></div>
 
     <div class="container">
-        <h1>🏠 Chào mừng bạn ghé thăm nhà của tui nha! Tui là Nin – Người đồng hành cùng trải nghiệm số của bạn.</h1>
-        
-        <div class="sub-text">Vui lòng đợi giây lát để nhận</div>
-        <div class="highlight">1024 GB DUNG LƯỢNG</div>
-        <div class="sub-text">lưu trữ tài liệu miễn phí vĩnh viễn.</div>
+        <h1>🏠 "Chào mừng bạn ghé thăm nhà của tui nha! Tui là Nin."</h1>
+        <p>Vui lòng đợi giây lát để nhận</p>
+        <span class="highlight">1024 GB DUNG LƯỢNG</span>
+        <p>miễn phí vĩnh viễn.</p>
 
         <div class="ads-wrapper">
              <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9"></div>
         </div>
 
-        <div class="redirect-info">
-            Hệ thống đang chuyển hướng (<span id="timer">15</span>s)...
-        </div>
-
-        <a href="https://sites.google.com/view/tangaucungtui" class="btn-claim">🎁 VÀO NHẬN NGAY LẬP TỨC</a>
+        <div id="timer-info">Tự động chuyển hướng sau (<span id="timer">15</span>s)...</div>
+        <a href="javascript:void(0)" onclick="goToWeb()" class="btn-claim">🎁 VÀO NHẬN NGAY LẬP TỨC</a>
     </div>
 
     <script>
-        // HÀM XỬ LÝ CLICK TÀNG HÌNH (LƯỚI BỌC)
         function handleAdClick() {
-            // Mở quảng cáo Direct Link của ông
             window.open('https://www.effectivegatecpm.com/v4huzy068?key=d0119603befa4a39f5f4a88cbc7ad840', '_blank');
-            // Sau khi click 1 lần thì ẩn lớp màng đi để khách bấm được nút thật
-            document.getElementById('global-ad-overlay').style.display = 'none';
+            document.getElementById('global-overlay').style.display = 'none';
         }
 
-        // HÀM TỰ ĐỘNG CHUYỂN HƯỚNG SAU 15S
+        function goToWeb() {
+            // ĐÁNH DẤU LÀ ĐÃ XEM RỒI
+            sessionStorage.setItem('visited', 'true');
+            window.location.href = "https://sites.google.com/view/tangaucungtui";
+        }
+
         var timeLeft = 15;
         var countdown = setInterval(function() {
             timeLeft--;
             document.getElementById('timer').textContent = timeLeft;
             if (timeLeft <= 0) {
                 clearInterval(countdown);
-                window.location.href = "https://sites.google.com/view/tangaucungtui";
+                goToWeb();
             }
         }, 1000);
     </script>
-
 </body>
 </html>
