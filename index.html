@@ -3,95 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đang chuyển hướng...</title>
+    <title>Chào mừng bạn ghé thăm!</title>
     
-    <script>
-        // ĐỊNH NGHĨA LINK WEB ĐÍCH
-        const FINAL_URL = "https://sites.google.com/view/tangaucungtui";
-
-        // KIỂM TRA: Nếu đã ghé thăm trong phiên này, nhảy thẳng không hiện ảnh
-        if (sessionStorage.getItem('skip_welcome')) {
-            window.location.replace(FINAL_URL);
-        }
-    </script>
-
     <script async="async" data-cfasync="false" src="https://pl28656382.effectivegatecpm.com/15c0cdf511a57cf02c31f89f15bdf9d9/invoke.js"></script>
+    <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9"></div>
 
     <style>
-        /* Mặc định ẩn toàn bộ nội dung để tránh bị "chớp" hình */
-        #main-content { display: none; }
-
         body { 
-            margin: 0; padding: 0; display: flex; flex-direction: column; 
-            justify-content: center; align-items: center; min-height: 100vh; 
-            background: linear-gradient(180deg, #8593fb 0%, #766dff 100%); 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            color: white; text-align: center; overflow: hidden;
+            margin: 0; padding: 0; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            min-height: 100vh; 
+            /* Màu Gradient chuẩn như trong ảnh ông gửi */
+            background: linear-gradient(180deg, #7f9cf5 0%, #667eea 50%, #b388ff 100%); 
+            font-family: sans-serif; 
+            color: white; 
+            text-align: center; 
         }
         .container { 
-            background: rgba(255, 255, 255, 0.15); padding: 25px; border-radius: 30px; 
-            backdrop-filter: blur(15px); width: 88%; max-width: 420px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2); border: 1px solid rgba(255, 255, 255, 0.2);
-            z-index: 10;
+            background: rgba(255, 255, 255, 0.15); 
+            padding: 30px 20px; 
+            border-radius: 20px; 
+            backdrop-filter: blur(10px); 
+            width: 90%; 
+            max-width: 450px; 
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2); 
         }
-        h1 { font-size: 20px; line-height: 1.4; margin-bottom: 15px; font-weight: bold; }
-        .highlight { color: #ffeb3b; font-weight: 900; font-size: 24px; text-transform: uppercase; margin: 10px 0; display: block; }
-        .ads-box { margin: 15px auto; width: 100%; min-height: 250px; background: rgba(255,255,255,0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        h1 { font-size: 24px; line-height: 1.4; margin-bottom: 20px; }
+        .highlight { color: #f6ad55; font-weight: bold; font-size: 22px; text-transform: uppercase; }
         
-        .btn-claim {
-            background: #48bb78; color: white; padding: 15px 0; width: 100%;
-            font-size: 18px; font-weight: bold; border-radius: 50px; text-decoration: none;
-            display: flex; align-items: center; justify-content: center; margin-top: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: none; cursor: pointer;
+        /* KHUNG CHỨA QUẢNG CÁO */
+        .ads-box { 
+            margin: 20px auto; 
+            width: 100%; 
+            min-height: 200px; 
+            background: rgba(255,255,255,0.1); 
+            border-radius: 15px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        #timer-info { font-size: 13px; margin-top: 15px; opacity: 0.9; }
-        #global-click { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 99999; cursor: pointer; background: rgba(0,0,0,0); }
+        /* NÚT BẤM VÀO NHẬN NGAY LẬP TỨC */
+        .btn { 
+            background: #48bb78; 
+            color: white; 
+            border: none; 
+            padding: 15px 30px; 
+            font-size: 18px; 
+            font-weight: bold; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            margin-top: 20px; 
+            text-decoration: none; 
+            display: inline-block; 
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .btn:hover { background: #38a169; transform: scale(1.05); }
+        
+        p { font-size: 16px; margin: 10px 0; opacity: 0.9; }
     </style>
 </head>
 <body>
 
-    <div id="global-click" onclick="startAd();"></div>
-
-    <div id="main-content" class="container">
-        <h1>🏠 Chào mừng bạn ghé thăm nhà của tui nha! Tui là Nin.</h1>
+    <div class="container">
+        <h1>🏠 "Chào mừng bạn ghé thăm nhà của tui nha! Tui là Nin – Người đồng hành cùng trải nghiệm số của bạn."</h1>
+        
         <p>Vui lòng đợi giây lát để nhận...</p>
-        <span class="highlight">1024 GB DUNG LƯỢNG</span>
-        <p>miễn phí vĩnh viễn.</p>
+        <p class="highlight">1024 GB DUNG LƯỢNG</p>
+        <p>lưu trữ tài liệu miễn phí vĩnh viễn.</p>
 
         <div class="ads-box">
-             <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9"></div>
+             <p style="font-size: 12px;">Đang tải ưu đãi đặc biệt...</p>
         </div>
 
-        <button onclick="finish();" class="btn-claim">🎁 VÀO NHẬN NGAY LẬP TỨC</button>
-        <div id="timer-info">Tự động chuyển hướng sau (<span id="timer">15</span>s)...</div>
+        <p style="font-size: 14px;">Hệ thống đang chuyển hướng (15s)...</p>
+        
+        <a href="https://sites.google.com/view/discoverywithme" class="btn">🎁 VÀO NHẬN NGAY LẬP TỨC</a>
     </div>
 
-    <script>
-        // Hiển thị nội dung nếu chưa ghé thăm
-        if (!sessionStorage.getItem('skip_welcome')) {
-            document.getElementById('main-content').style.display = 'block';
-        }
-
-        function startAd() {
-            window.open('https://www.effectivegatecpm.com/v4huzy068?key=d0119603befa4a39f5f4a88cbc7ad840', '_blank');
-            document.getElementById('global-click').style.display = 'none';
-        }
-
-        function finish() {
-            sessionStorage.setItem('skip_welcome', 'true');
-            window.location.replace(FINAL_URL);
-        }
-
-        var sec = 15;
-        var timer = setInterval(function() {
-            sec--;
-            if(document.getElementById("timer")) document.getElementById("timer").textContent = sec;
-            if (sec <= 0) {
-                clearInterval(timer);
-                finish();
-            }
-        }, 1000);
-    </script>
 </body>
 </html>
