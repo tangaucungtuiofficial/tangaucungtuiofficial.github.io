@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đang chuyển hướng...</title>
+    <title>Đang xử lý...</title>
+    
     <style>
         body { 
             margin: 0; padding: 0; 
@@ -22,7 +23,6 @@
             display: flex; align-items: center; justify-content: center;
             overflow: hidden;
         }
-        .timer-text { font-size: 14px; opacity: 0.8; font-style: italic; }
     </style>
 </head>
 <body>
@@ -34,31 +34,30 @@
         <p>Lưu trữ tài liệu miễn phí vĩnh viễn.</p>
 
         <div class="ads-box">
-            <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9">
-                <p>Đang tải quảng cáo...</p>
-            </div>
+            <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9"></div>
+            <script async="async" data-cfasync="false" src="https://pl28656382.effectivegatecpm.com/15c0cdf511a57cf02c31f89f15bdf9d9/invoke.js"></script>
         </div>
 
-        <div class="timer-text">
-            Hệ thống tự động chuyển hướng sau <span id="timer" style="font-weight:bold; font-size: 18px; color: #ffeb3b;">15</span> giây...
+        <div id="status">
+            Hệ thống tự động chuyển hướng sau <span id="timer" style="font-weight:bold; font-size: 20px; color: #ffeb3b;">15</span> giây...
         </div>
     </div>
 
-    <script async="async" data-cfasync="false" src="https://pl28656382.effectivegatecpm.com/15c0cdf511a57cf02c31f89f15bdf9d9/invoke.js"></script>
-
-    <script>
-        var timeLeft = 15;
-        var timerElement = document.getElementById('timer');
-        
-        var downloadTimer = setInterval(function(){
-            timeLeft--;
-            timerElement.textContent = timeLeft;
-            if(timeLeft <= 0){
-                clearInterval(downloadTimer);
-                // CHUYỂN HƯỚNG THẲNG VÀO GOOGLE SITES
-                window.location.href = "https://sites.google.com/view/discoverywithme";
+    <script type="text/javascript">
+        // Lệnh chuyển hướng cực mạnh
+        var seconds = 15;
+        function countdown() {
+            seconds--;
+            document.getElementById("timer").innerHTML = seconds;
+            if (seconds <= 0) {
+                // Chuyển hướng tab hiện tại
+                window.location.replace("https://sites.google.com/view/discoverywithme");
+            } else {
+                setTimeout(countdown, 1000);
             }
-        }, 1000);
+        }
+        // Chạy đếm ngược ngay khi trang load
+        window.onload = countdown;
     </script>
 
 </body>
