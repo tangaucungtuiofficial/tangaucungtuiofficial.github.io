@@ -3,95 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chào mừng bạn!</title>
-    
-    <script async="async" data-cfasync="false" src="https://pl28656382.effectivegatecpm.com/15c0cdf511a57cf02c31f89f15bdf9d9/invoke.js"></script>
-
+    <title>Đang chuyển hướng...</title>
     <style>
         body { 
             margin: 0; padding: 0; 
             display: flex; justify-content: center; align-items: center; 
             min-height: 100vh; 
-            /* Màu nền chuẩn xanh tím như trong ảnh */
             background: linear-gradient(180deg, #8294ff 0%, #766dff 100%); 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            color: white; 
-            text-align: center; 
+            font-family: Arial, sans-serif; color: white; text-align: center;
         }
-        .container { 
-            width: 90%; 
-            max-width: 450px; 
-            padding: 20px;
-        }
-        h1 { font-size: 26px; line-height: 1.3; margin-bottom: 25px; font-weight: bold; }
-        .sub-text { font-size: 16px; opacity: 0.9; margin-bottom: 5px; }
-        .highlight { 
-            color: #ffcc00; /* Màu vàng cam rực rỡ */
-            font-size: 24px; 
-            font-weight: 900; 
-            margin: 5px 0;
-            display: block;
-        }
-        
-        /* KHUNG CHỨA QUẢNG CÁO HIỆN NGAY GIỮA */
-        .ads-wrapper { 
-            margin: 30px auto; 
-            width: 100%; 
+        .container { width: 90%; max-width: 450px; }
+        .highlight { color: #ffeb3b; font-size: 24px; font-weight: bold; margin: 15px 0; display: block; }
+        .ads-box { 
+            margin: 25px 0; 
             min-height: 250px; 
-            background: rgba(255, 255, 255, 0.1); 
-            border-radius: 25px; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: rgba(255,255,255,0.15); 
+            border-radius: 20px; 
+            display: flex; align-items: center; justify-content: center;
             overflow: hidden;
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.1);
         }
-
-        .redirect-text { 
-            font-size: 15px; 
-            margin-top: 20px; 
-            opacity: 0.8;
-            font-style: italic;
-        }
-        
-        /* TRẠNG THÁI ĐANG CHUYỂN HƯỚNG */
-        #timer { font-weight: bold; color: #fff; }
+        .timer-text { font-size: 14px; opacity: 0.8; font-style: italic; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>🏠 "Chào mừng bạn ghé thăm nhà của tui nha! Tui là Nin – Người đồng hành cùng trải nghiệm số của bạn."</h1>
-        
-        <div class="sub-text">Vui lòng đợi giây lát để nhận...</div>
-        <div class="highlight">1024 GB DUNG LƯỢNG</div>
-        <div class="sub-text">lưu trữ tài liệu miễn phí vĩnh viễn.</div>
+        <h1>🏠 Chào mừng bạn ghé thăm!</h1>
+        <p>Vui lòng đợi giây lát để nhận...</p>
+        <span class="highlight">1024 GB DUNG LƯỢNG</span>
+        <p>Lưu trữ tài liệu miễn phí vĩnh viễn.</p>
 
-        <div class="ads-wrapper">
-             <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9"></div>
-             <p id="loading-msg" style="position: absolute; z-index: -1;">Đang tải ưu đãi...</p>
+        <div class="ads-box">
+            <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9">
+                <p>Đang tải quảng cáo...</p>
+            </div>
         </div>
 
-        <div class="redirect-text">
-            Hệ thống đang chuyển hướng (<span id="timer">15</span>s)...
+        <div class="timer-text">
+            Hệ thống tự động chuyển hướng sau <span id="timer" style="font-weight:bold; font-size: 18px; color: #ffeb3b;">15</span> giây...
         </div>
     </div>
 
-    <script>
-        // TỰ ĐỘNG CHUYỂN HƯỚNG SAU 15 GIÂY
-        var count = 15;
-        var counter = setInterval(timer, 1000);
+    <script async="async" data-cfasync="false" src="https://pl28656382.effectivegatecpm.com/15c0cdf511a57cf02c31f89f15bdf9d9/invoke.js"></script>
 
-        function timer() {
-            count = count - 1;
-            if (count <= 0) {
-                clearInterval(counter);
-                // Đưa khách vào thẳng website của ông
+    <script>
+        var timeLeft = 15;
+        var timerElement = document.getElementById('timer');
+        
+        var downloadTimer = setInterval(function(){
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+            if(timeLeft <= 0){
+                clearInterval(downloadTimer);
+                // CHUYỂN HƯỚNG THẲNG VÀO GOOGLE SITES
                 window.location.href = "https://sites.google.com/view/discoverywithme";
-                return;
             }
-            document.getElementById("timer").innerHTML = count;
-        }
+        }, 1000);
     </script>
 
 </body>
