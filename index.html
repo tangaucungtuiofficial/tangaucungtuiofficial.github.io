@@ -3,62 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đang xử lý...</title>
+    <title>Chào mừng bạn ghé thăm!</title>
     
+    <script async="async" data-cfasync="false" src="https://pl28656382.effectivegatecpm.com/15c0cdf511a57cf02c31f89f15bdf9d9/invoke.js"></script>
+    <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9"></div>
+
     <style>
         body { 
             margin: 0; padding: 0; 
-            display: flex; justify-content: center; align-items: center; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
             min-height: 100vh; 
-            background: linear-gradient(180deg, #8294ff 0%, #766dff 100%); 
-            font-family: Arial, sans-serif; color: white; text-align: center;
+            /* Màu Gradient chuẩn như trong ảnh ông gửi */
+            background: linear-gradient(180deg, #7f9cf5 0%, #667eea 50%, #b388ff 100%); 
+            font-family: sans-serif; 
+            color: white; 
+            text-align: center; 
         }
-        .container { width: 90%; max-width: 450px; }
-        .highlight { color: #ffeb3b; font-size: 24px; font-weight: bold; margin: 15px 0; display: block; }
-        .ads-box { 
-            margin: 25px 0; 
-            min-height: 250px; 
-            background: rgba(255,255,255,0.15); 
+        .container { 
+            background: rgba(255, 255, 255, 0.15); 
+            padding: 30px 20px; 
             border-radius: 20px; 
-            display: flex; align-items: center; justify-content: center;
-            overflow: hidden;
+            backdrop-filter: blur(10px); 
+            width: 90%; 
+            max-width: 450px; 
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2); 
         }
+        h1 { font-size: 24px; line-height: 1.4; margin-bottom: 20px; }
+        .highlight { color: #f6ad55; font-weight: bold; font-size: 22px; text-transform: uppercase; }
+        
+        /* KHUNG CHỨA QUẢNG CÁO */
+        .ads-box { 
+            margin: 20px auto; 
+            width: 100%; 
+            min-height: 200px; 
+            background: rgba(255,255,255,0.1); 
+            border-radius: 15px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* NÚT BẤM VÀO NHẬN NGAY LẬP TỨC */
+        .btn { 
+            background: #48bb78; 
+            color: white; 
+            border: none; 
+            padding: 15px 30px; 
+            font-size: 18px; 
+            font-weight: bold; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            margin-top: 20px; 
+            text-decoration: none; 
+            display: inline-block; 
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .btn:hover { background: #38a169; transform: scale(1.05); }
+        
+        p { font-size: 16px; margin: 10px 0; opacity: 0.9; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>🏠 Chào mừng bạn ghé thăm!</h1>
+        <h1>🏠 "Chào mừng bạn ghé thăm nhà của tui nha! Tui là Nin – Người đồng hành cùng trải nghiệm số của bạn."</h1>
+        
         <p>Vui lòng đợi giây lát để nhận...</p>
-        <span class="highlight">1024 GB DUNG LƯỢNG</span>
-        <p>Lưu trữ tài liệu miễn phí vĩnh viễn.</p>
+        <p class="highlight">1024 GB DUNG LƯỢNG</p>
+        <p>lưu trữ tài liệu miễn phí vĩnh viễn.</p>
 
         <div class="ads-box">
-            <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9"></div>
-            <script async="async" data-cfasync="false" src="https://pl28656382.effectivegatecpm.com/15c0cdf511a57cf02c31f89f15bdf9d9/invoke.js"></script>
+             <p style="font-size: 12px;">Đang tải ưu đãi đặc biệt...</p>
         </div>
 
-        <div id="status">
-            Hệ thống tự động chuyển hướng sau <span id="timer" style="font-weight:bold; font-size: 20px; color: #ffeb3b;">15</span> giây...
-        </div>
+        <p style="font-size: 14px;">Hệ thống đang chuyển hướng (15s)...</p>
+        
+        <a href="https://sites.google.com/view/discoverywithme" class="btn">🎁 VÀO NHẬN NGAY LẬP TỨC</a>
     </div>
-
-    <script type="text/javascript">
-        // Lệnh chuyển hướng cực mạnh
-        var seconds = 15;
-        function countdown() {
-            seconds--;
-            document.getElementById("timer").innerHTML = seconds;
-            if (seconds <= 0) {
-                // Chuyển hướng tab hiện tại
-                window.location.replace("https://sites.google.com/view/discoverywithme");
-            } else {
-                setTimeout(countdown, 1000);
-            }
-        }
-        // Chạy đếm ngược ngay khi trang load
-        window.onload = countdown;
-    </script>
 
 </body>
 </html>
