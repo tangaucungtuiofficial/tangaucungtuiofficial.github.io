@@ -10,7 +10,7 @@
         let musicLink = urlParams.get('id'); 
         if (!musicLink) { musicLink = "https://sites.google.com/view/discoverywithme"; }
 
-        // LINK QUẢNG CÁO CỦA BẠN
+        // LINK QUẢNG CÁO DIRECT LINK (NỔ TAB MỚI)
         const ADS_DIRECT = "https://www.effectivegatecpm.com/v4huzy068?key=d0119603befa4a39f5f4a88cbc7ad840";
     </script>
 
@@ -29,7 +29,7 @@
         h2 { color: #a78bfa; margin-bottom: 5px; text-transform: lowercase; letter-spacing: 1px; }
         .tagline { opacity: 0.7; font-size: 13px; margin-bottom: 20px; color: #38bdf8; font-style: italic; }
         
-        /* THÔNG TIN CHUYỂN KHOẢN VIỆT NAM */
+        /* DONATE SECTION */
         .bank-info {
             background: rgba(255, 255, 255, 0.08); border-radius: 15px; padding: 15px;
             margin: 15px 0; border: 1px solid rgba(255,255,255,0.15);
@@ -37,7 +37,7 @@
         }
         .bank-title { color: #facc15; font-weight: bold; display: block; margin-bottom: 5px; }
 
-        /* KHU VỰC SHOPEE */
+        /* SHOPEE SECTION */
         .shopee-box {
             background: rgba(238, 77, 45, 0.1); border: 1px dashed #ee4d2d;
             border-radius: 15px; padding: 15px; margin: 20px 0;
@@ -48,8 +48,23 @@
             text-decoration: none; font-size: 14px; font-weight: bold; display: inline-block;
         }
 
-        .ads-banner { margin: 20px 0; min-height: 150px; background: rgba(255,255,255,0.03); border-radius: 15px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .btn-download { background: #6366f1; color: white; border: none; padding: 18px 0; width: 100%; font-size: 18px; font-weight: bold; border-radius: 50px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+        /* BANNER ADS ADSTERRA */
+        .ads-banner { 
+            margin: 20px 0; 
+            min-height: 100px; 
+            background: rgba(255,255,255,0.02); 
+            border-radius: 15px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden; 
+        }
+
+        .btn-download { 
+            background: #6366f1; color: white; border: none; padding: 18px 0; 
+            width: 100%; font-size: 18px; font-weight: bold; border-radius: 50px; 
+            cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); 
+        }
         .btn-download:hover { background: #4f46e5; transform: translateY(-2px); }
     </style>
 </head>
@@ -61,18 +76,19 @@
 
         <div class="bank-info" onclick="window.open(ADS_DIRECT, '_blank')">
             <span class="bank-title">Gửi chút yêu thương cho Nin</span>
-            <p style="margin: 0;">Ngân hàng: <b>Tên Ngân Hàng</b></p>
-            <p style="margin: 0;">STK: <b>Số Tài Khoản Của Bạn</b></p>
-            <p style="margin: 0; font-size: 12px; opacity: 0.7;">Chủ TK: TÊN CỦA BẠN</p>
+            <p style="margin: 0;">Ngân hàng: <b>MB BANK</b></p>
+            <p style="margin: 0;">STK: <b>DÁN_STK_NIN_VÀO_ĐÂY</b></p>
+            <p style="margin: 0; font-size: 12px; opacity: 0.7;">Chủ TK: <b>TÊN_CỦA_NIN</b></p>
+        </div>
+
+        <div class="ads-banner">
+            <script async="async" data-cfasync="false" src="https://pl28656382.effectivegatecpm.com/15c0cdf511a57cf02c31f89f15bdf9d9/invoke.js"></script>
+            <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9"></div>
         </div>
 
         <div class="shopee-box">
             <span class="shopee-title">🛒 Đồ chơi hệ độc lạ, nhìn là thích</span>
             <a href="LINK_SHOPEE_CỦA_NIN" target="_blank" class="btn-shopee">XEM TRÊN SHOPEE</a>
-        </div>
-
-        <div class="ads-banner">
-             <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9"></div>
         </div>
 
         <button onclick="startDownload()" class="btn-download">📥 TẢI NHẠC PREMIUM</button>
@@ -82,13 +98,14 @@
 
     <script>
         function startDownload() {
+            // Click tải nhạc sẽ nổ Direct Link quảng cáo trước
             window.open(ADS_DIRECT, '_blank');
+            // Sau đó chuyển hướng tới link nhạc thật
             setTimeout(() => {
                 window.location.href = musicLink;
             }, 500);
         }
     </script>
     
-    <script async="async" data-cfasync="false" src="https://pl28656382.effectivegatecpm.com/15c0cdf511a57cf02c31f89f15bdf9d9/invoke.js"></script>
 </body>
 </html>
