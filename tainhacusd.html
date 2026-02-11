@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ủng hộ Jack Wang Music</title>
+</head>
+<body style="margin: 0; padding: 0; background: #1a365d;">
+
 <div id="unlock-container" style="width: 100%; min-height: 100vh; background: #1a365d; color: #ffffff; font-family: 'Segoe UI', Arial, sans-serif; display: flex; flex-direction: column; align-items: center; padding: 40px 15px; box-sizing: border-box; margin: 0 auto;">
     
     <div style="max-width: 550px; width: 100%; text-align: center;">
@@ -5,7 +14,7 @@
         <div id="pay-zone">
             <div style="font-size: 60px; margin-bottom: 10px;">☕</div>
             <h3 style="color: #63b3ed; font-size: 28px; text-transform: uppercase; letter-spacing: 2px;">Ủng hộ mình ly cafe?</h3>
-            <p style="margin-bottom: 30px; opacity: 0.9;">Nhận mã mật khẩu để truy cập link tải nhạc VIP</p>
+            <p style="margin-bottom: 30px; opacity: 0.9;">Sự ủng hộ của bạn giúp mình duy trì đam mê âm nhạc</p>
 
             <div style="display: flex; gap: 10px; margin-bottom: 25px;">
                 <button onclick="showTab('vn')" id="tab-vn" style="flex: 1; padding: 15px; border-radius: 12px; border: 2px solid #63b3ed; background: #3182ce; color: white; cursor: pointer; font-weight: bold; transition: 0.3s;">VIỆT NAM (QR)</button>
@@ -13,69 +22,56 @@
             </div>
 
             <div id="content-vn" style="text-align: left; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border: 1px solid rgba(99, 179, 237, 0.3);">
-                <p style="color: #f1c40f; font-weight: bold; margin-top: 0;">Hướng dẫn nhận mã:</p>
+                <p style="color: #f1c40f; font-weight: bold; margin-top: 0;">Hướng dẫn nhận Link Tải:</p>
                 <ul style="font-size: 14px; line-height: 1.8; color: #e2e8f0;">
-                    <li>Quét mã QR bên dưới bằng App Ngân hàng (ACB).</li>
-                    <li>Mức tặng: <b style="color: #63b3ed;">20,000 VNĐ</b> (Tự nguyện).</li>
-                    <li>Chuyển xong hãy nhấn nút xác nhận bên dưới.</li>
-                    <li><b style="color: #f1c40f;">LƯU Ý:</b> Phải lưu lại mật khẩu sau khi hiện ra.</li>
+                    <li>Quét mã QR bên dưới bằng App Ngân hàng bất kỳ.</li>
+                    <li>Mức tặng: <b style="color: #63b3ed;">20,000 VNĐ</b> (Hoặc tùy tâm).</li>
+                    <li>Chuyển khoản xong, nhấn nút <b>XÁC NHẬN</b> bên dưới.</li>
                 </ul>
                 <div style="text-align: center; margin: 20px 0; background: white; padding: 15px; border-radius: 15px;">
-                    <img src="https://img.vietqr.io/image/ACB-5447287-compact.jpg?amount=20000&addInfo=CAFE%20MUSIC&accountName=JACK%20WANG" style="max-width: 100%; height: auto;">
+                    <img src="https://img.vietqr.io/image/ACB-5447287-compact.jpg?amount=20000&addInfo=CAFE%20MUSIC&accountName=JACK%20WANG" style="max-width: 100%; height: auto; border-radius: 5px;">
                 </div>
-                <button onclick="unlockPass()" style="background: #28a745; color: white; border: none; padding: 18px; border-radius: 50px; width: 100%; font-weight: bold; cursor: pointer; font-size: 18px;">XÁC NHẬN ĐÃ GỬI & LẤY MÃ</button>
+                <button onclick="unlockNow()" style="background: #28a745; color: white; border: none; padding: 18px; border-radius: 50px; width: 100%; font-weight: bold; cursor: pointer; font-size: 18px; box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);">XÁC NHẬN ĐÃ GỬI & TẢI NHẠC</button>
             </div>
 
             <div id="content-intl" style="display: none; text-align: left; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border: 1px solid rgba(99, 179, 237, 0.3);">
                 <p style="color: #63b3ed; font-weight: bold; margin-top: 0;">International Support:</p>
-                <p style="font-size: 14px; color: #e2e8f0; margin-bottom: 20px;">Support $1 via PayPal. Your password will be revealed after successful payment.</p>
+                <p style="font-size: 14px; color: #e2e8f0; margin-bottom: 20px;">Support $1 via PayPal. Your VIP link will be revealed after payment.</p>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
                     <input type="hidden" name="business" value="jackwang1368@gmail.com">
                     <input type="hidden" name="cmd" value="_xclick">
                     <input type="hidden" name="item_name" value="Voluntary Gift - Jack Wang Music">
                     <input type="hidden" name="amount" value="1.00">
                     <input type="hidden" name="currency_code" value="USD">
-                    <input type="hidden" name="return" value="https://tangaucungtui.github.io/?status=success">
+                    <input type="hidden" name="return" value="https://discoverywithme.github.io/indexvn.html?status=success">
                     <button type="submit" style="background: #0070ba; color: white; border: none; padding: 18px; border-radius: 50px; width: 100%; font-weight: bold; cursor: pointer; font-size: 18px;">DONATE $1 VIA PAYPAL</button>
                 </form>
             </div>
 
             <div style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-                <div style="text-align: left; font-size: 11px; color: #a0aec0; line-height: 1.6; margin-bottom: 20px;">
-                    <b style="color: #cbd5e0;">ĐIỀU KHOẢN & CAM KẾT:</b><br>
-                    • Việc tặng cafe là 100% <b>tự nguyện</b> ủng hộ người sáng tạo.<br>
-                    • Không có chính sách hoàn tiền sau khi đã thực hiện.<br>
-                    • Nhạc được chia sẻ theo giấy phép <b>Creative Commons (CC BY)</b>. Mình không chịu bất kỳ trách nhiệm pháp lý nào về việc sử dụng nhạc của bên thứ ba.<br>
-                    • Liên hệ hỗ trợ: <span style="color: #63b3ed;">ninnhanwang@gmail.com</span>
-                </div>
                 <div style="margin-bottom: 20px; min-height: 250px;">
                     <script async="async" data-cfasync="false" src="https://pl28656382.effectivegatecpm.com/15c0cdf511a57cf02c31f89f15bdf9d9/invoke.js"></script>
                     <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9"></div>
+                </div>
+                <div style="text-align: left; font-size: 11px; color: #a0aec0; line-height: 1.6;">
+                    • Việc tặng cafe là tự nguyện ủng hộ.<br>
+                    • Liên hệ: jackwang1368@gmail.com
                 </div>
             </div>
         </div>
 
         <div id="pass-zone" style="display: none; padding: 40px 0;">
             <div style="font-size: 80px;">🎊</div>
-            <h3 style="color: #68d391;">ỦNG HỘ THÀNH CÔNG!</h3>
-            <p style="color: #f1c40f; font-weight: bold; font-size: 18px;">VUI LÒNG LƯU LẠI MẬT KHẨU NÀY:</p>
+            <h3 style="color: #68d391;">CẢM ƠN BẠN RẤT NHIỀU!</h3>
+            <p style="color: #f1c40f; font-weight: bold; font-size: 18px; margin-bottom: 30px;">Link tải nhạc VIP của bạn đã sẵn sàng:</p>
             
-            <div style="font-size: clamp(35px, 10vw, 50px); color: #ffffff; font-weight: bold; background: rgba(255,255,255,0.1); padding: 30px; border-radius: 20px; border: 3px dashed #63b3ed; letter-spacing: 8px; margin: 25px 0;">
-                ABCD
-            </div>
-
-            <div style="text-align: left; background: rgba(0,0,0,0.2); padding: 20px; border-radius: 12px; font-size: 14px; line-height: 1.6; margin-bottom: 25px;">
-                <b style="color: #63b3ed;">Cách tải nhạc sau khi có mã:</b><br>
-                1. Sao chép (Copy) mật khẩu ở trên.<br>
-                2. Nhấn nút <b>"Đi đến Link Tải"</b> ở bên dưới.<br>
-                3. Khi trang mới hiện ra, dán mật khẩu vào ô yêu cầu.<br>
-                <span style="color: #ff4d4d;">* Lưu ý: Lưu giữ mã cẩn thận, mình không cấp lại mã.</span>
-            </div>
-
-            <button onclick="window.location.href='tainhac$.html?id=https://1024terabox.com/s/1_XPau_RB1qXG3W1pvGyX2g'" 
-                    style="background: #3182ce; color: white; border: none; padding: 18px 40px; border-radius: 50px; cursor: pointer; font-weight: bold; font-size: 18px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); width: 100%;">
-                ĐI ĐẾN LINK TẢI 📥
-            </button>
+            <a href="https://1024terabox.com/s/1_XPau_RB1qXG3W1pvGyX2g" target="_blank" style="text-decoration: none;">
+                <button style="background: #28a745; color: white; border: none; padding: 25px 40px; border-radius: 50px; cursor: pointer; font-weight: bold; font-size: 22px; box-shadow: 0 10px 20px rgba(0,0,0,0.4); width: 100%;">
+                    TẢI NHẠC NGAY (VIP) 📥
+                </button>
+            </a>
+            
+            <p style="margin-top: 25px; font-size: 14px; opacity: 0.7;">Nhấn nút trên để mở thư mục nhạc Terabox</p>
         </div>
     </div>
 </div>
@@ -90,17 +86,21 @@
             vnContent.style.display = 'block';
             intlContent.style.display = 'none';
             vnTab.style.background = '#3182ce';
+            vnTab.style.border = '2px solid #63b3ed';
             intlTab.style.background = 'rgba(255,255,255,0.1)';
+            intlTab.style.border = '2px solid transparent';
         } else {
             vnContent.style.display = 'none';
             intlContent.style.display = 'block';
             intlTab.style.background = '#3182ce';
+            intlTab.style.border = '2px solid #63b3ed';
             vnTab.style.background = 'rgba(255,255,255,0.1)';
+            vnTab.style.border = '2px solid transparent';
         }
     }
 
-    function unlockPass() {
-        // Mở ads phụ (Pop-under)
+    function unlockNow() {
+        // Mở ads Pop-under trước khi hiện link
         window.open('https://www.effectivegatecpm.com/v4huzy068?key=d0119603befa4a39f5f4a88cbc7ad840', '_blank');
         document.getElementById('pay-zone').style.display = 'none';
         document.getElementById('pass-zone').style.display = 'block';
@@ -114,3 +114,6 @@
         window.scrollTo(0,0);
     }
 </script>
+
+</body>
+</html>
