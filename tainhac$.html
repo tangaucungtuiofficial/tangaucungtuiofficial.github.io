@@ -8,24 +8,84 @@
             <p style="margin-bottom: 30px; opacity: 0.9;">Chọn phương thức ủng hộ để nhận mã giải nén nhạc</p>
 
             <div style="display: flex; gap: 10px; margin-bottom: 25px;">
-                <button onclick="showTab('vn')" id="tab-vn" style="flex: 1; padding: 15px; border-radius: 12px; border: 2px solid #63b3ed; background: #3182ce; color: white; cursor: pointer; font-weight: bold; transition: 0.3s;">VIỆT NAM (Quét QR)</button>
-                <button onclick="showTab('intl')" id="tab-intl" style="flex: 1; padding: 15px; border-radius: 12px; border: 2px solid transparent; background: rgba(255,255,255,0.1); color: white; cursor: pointer; font-weight: bold; transition: 0.3s;">QUỐC TẾ (PayPal)</button>
+                <button onclick="showTab('vn')" id="tab-vn" style="flex: 1; padding: 15px; border-radius: 12px; border: 2px solid #63b3ed; background: #3182ce; color: white; cursor: pointer; font-weight: bold;">VIỆT NAM (QR)</button>
+                <button onclick="showTab('intl')" id="tab-intl" style="flex: 1; padding: 15px; border-radius: 12px; border: 2px solid transparent; background: rgba(255,255,255,0.1); color: white; cursor: pointer; font-weight: bold;">QUỐC TẾ (PayPal)</button>
             </div>
 
             <div id="content-vn" style="text-align: left; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border: 1px solid rgba(99, 179, 237, 0.3);">
-                <p style="color: #f1c40f; font-weight: bold; margin-top: 0; font-size: 16px;">Hướng dẫn ủng hộ (VN):</p>
-                <ul style="font-size: 14px; line-height: 1.8; padding-left: 20px; color: #e2e8f0;">
-                    <li>Mở App Ngân hàng bất kỳ và <b>Quét mã QR</b> bên dưới.</li>
-                    <li>Mức tặng mặc định: <b style="color: #63b3ed;">20,000 VNĐ</b>.</li>
-                    <li>Sau khi chuyển xong, nhấn nút xác nhận bên dưới để hiện mã.</li>
-                    <li><span style="color: #f1c40f;">Lưu ý:</span> Hãy lưu lại mã cẩn thận để sử dụng khi tải nhạc.</li>
+                <p style="color: #f1c40f; font-weight: bold; margin-top: 0;">Hướng dẫn ủng hộ (VN):</p>
+                <ul style="font-size: 14px; line-height: 1.8; color: #e2e8f0;">
+                    <li>Quét mã QR bên dưới bằng App Ngân hàng.</li>
+                    <li>Mức tặng: <b style="color: #63b3ed;">20,000 VNĐ</b>.</li>
+                    <li>Chuyển xong hãy nhấn nút xác nhận bên dưới.</li>
                 </ul>
-                
-                <div style="text-align: center; margin: 20px 0; background: white; padding: 15px; border-radius: 15px; display: block;">
-                    <img src="https://img.vietqr.io/image/ACB-5447287-compact.jpg?amount=20000&addInfo=CAFE%20MUSIC&accountName=JACK%20WANG" 
-                         alt="QR Bank ACB Jack Wang" style="max-width: 100%; height: auto; border-radius: 5px;">
-                    <p style="color: #000; font-size: 12px; margin-top: 10px; font-weight: bold; opacity: 0.7;">Quét bằng mọi App Ngân hàng (VietQR)</p>
+                <div style="text-align: center; margin: 20px 0; background: white; padding: 15px; border-radius: 15px;">
+                    <img src="https://img.vietqr.io/image/ACB-5447287-compact.jpg?amount=20000&addInfo=CAFE%20MUSIC&accountName=JACK%20WANG" style="max-width: 100%; height: auto;">
                 </div>
-
-                <button onclick="unlockPass()" style="background: #28a745; color: white; border: none; padding: 18px; border-radius: 50px; width: 100%; font-weight: bold; cursor: pointer; font-size: 18px; box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);">XÁC NHẬN ĐÃ GỬI & LẤY MÃ</button>
+                <button onclick="unlockPass()" style="background: #28a745; color: white; border: none; padding: 18px; border-radius: 50px; width: 100%; font-weight: bold; cursor: pointer; font-size: 18px;">XÁC NHẬN ĐÃ GỬI & LẤY MÃ</button>
             </div>
+
+            <div id="content-intl" style="display: none; text-align: left; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border: 1px solid rgba(99, 179, 237, 0.3);">
+                <p style="color: #63b3ed; font-weight: bold; margin-top: 0;">International Support:</p>
+                <p style="font-size: 14px; color: #e2e8f0; margin-bottom: 20px;">Support $1 via PayPal. Your password will be revealed after return.</p>
+                
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="business" value="jackwang1368@gmail.com">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="item_name" value="Voluntary Gift - Jack Wang">
+                    <input type="hidden" name="amount" value="1.00">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="hidden" name="return" value="https://discoverywithme.github.io/?status=success">
+                    <input type="hidden" name="no_shipping" value="1">
+                    
+                    <button type="submit" style="background: #0070ba; color: white; border: none; padding: 18px; border-radius: 50px; width: 100%; font-weight: bold; cursor: pointer; font-size: 18px;">
+                        DONATE $1 VIA PAYPAL
+                    </button>
+                </form>
+                <p style="font-size: 10px; color: #a0aec0; margin-top: 10px; text-align: center;">(PayPal will open in the same window to avoid pop-up blockers)</p>
+            </div>
+
+            <div style="font-size: 11px; color: #a0aec0; text-align: left; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                <b>Lưu ý:</b> Vui lòng lưu mật khẩu cẩn thận sau khi nhận. jackwang1368@gmail.com
+            </div>
+        </div>
+
+        <div id="pass-zone" style="display: none; padding: 40px 0;">
+            <div style="font-size: 80px;">🎊</div>
+            <h3 style="color: #68d391;">THÀNH CÔNG!</h3>
+            <div style="font-size: 40px; color: #ffffff; font-weight: bold; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; border: 3px dashed #63b3ed; letter-spacing: 8px; margin: 25px 0;">
+                ABCD
+            </div>
+            <p>Lưu lại mã này để nhập vào Terabox nhé!</p>
+            <button onclick="window.scrollTo(0, document.body.scrollHeight)" style="background: transparent; color: #68d391; border: 2px solid #68d391; padding: 10px 20px; border-radius: 10px; cursor: pointer; margin-top: 15px;">Đi đến Link Tải 📥</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showTab(type) {
+        if(type === 'vn') {
+            document.getElementById('content-vn').style.display = 'block';
+            document.getElementById('content-intl').style.display = 'none';
+            document.getElementById('tab-vn').style.background = '#3182ce';
+            document.getElementById('tab-intl').style.background = 'rgba(255,255,255,0.1)';
+        } else {
+            document.getElementById('content-vn').style.display = 'none';
+            document.getElementById('content-intl').style.display = 'block';
+            document.getElementById('tab-intl').style.background = '#3182ce';
+            document.getElementById('tab-vn').style.background = 'rgba(255,255,255,0.1)';
+        }
+    }
+
+    function unlockPass() {
+        // Chỉ chạy Ads khi khách VN xác nhận cho nhẹ trang
+        window.open('https://www.effectivegatecpm.com/v4huzy068?key=d0119603befa4a39f5f4a88cbc7ad840', '_blank');
+        document.getElementById('pay-zone').style.display = 'none';
+        document.getElementById('pass-zone').style.display = 'block';
+    }
+
+    if (window.location.search.indexOf('status=success') > -1) {
+        document.getElementById('pay-zone').style.display = 'none';
+        document.getElementById('pass-zone').style.display = 'block';
+    }
+</script>
