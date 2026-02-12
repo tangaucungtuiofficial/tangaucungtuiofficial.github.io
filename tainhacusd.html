@@ -17,21 +17,22 @@
 
         <div style="text-align: left; background: rgba(251, 211, 141, 0.15); border: 1px dashed #fbd38d; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
             <h4 style="color: #fbd38d; margin: 0 0 10px 0; display: flex; align-items: center; font-size: 16px;">
-                <span style="margin-right: 8px;">💳</span> CÁCH TẶNG QUÀ (KHÔNG CẦN PAYPAL)
+                <span style="margin-right: 8px;">💳</span> CÁCH TẶNG QUÀ NHANH (KHÔNG CẦN TÀI KHOẢN)
             </h4>
             <div style="font-size: 13px; line-height: 1.6; color: #e2e8f0;">
                 1️⃣ Bấm nút <b>TẶNG NIN $<span class="current-amt">1</span></b> ở dưới.<br>
                 2️⃣ Chọn dòng <b>"Thanh toán bằng thẻ"</b> (hoặc <i>Pay with Debit or Credit Card</i>).<br>
-                3️⃣ Nhập số thẻ <b>Visa, Mastercard</b> hoặc <b>ATM Napas</b> của bạn để hoàn tất.<br>
-                <span style="color: #68d391;">✅ An toàn - Không cần đăng ký hay đăng nhập PayPal.</span>
+                3️⃣ Nhập số thẻ <b>Visa, Mastercard</b> hoặc <b>ATM Napas</b> của bạn.<br>
+                <span style="color: #68d391;">✅ An toàn - Bảo mật - Tiền trừ trực tiếp từ ngân hàng Việt Nam.</span>
             </div>
         </div>
 
-        <div style="text-align: left; background: rgba(0, 0, 0, 0.2); padding: 15px; border-radius: 12px; margin-bottom: 25px; font-size: 12px; line-height: 1.6; border: 1px solid rgba(255,255,255,0.1); color: #cbd5e0;">
-            <b style="color: #63b3ed;">📜 Lưu ý:</b><br>
-            • Nhạc được cung cấp bởi <b>Nin</b>. Ghi nguồn <i>discoverywithme.github.io</i> khi sử dụng.<br>
-            • Hệ thống tự động mở link tải VIP ngay sau khi thanh toán thành công.<br>
-            • Mọi sự hỗ trợ đều là tự nguyện để duy trì hoạt động của Nin.
+        <div style="text-align: left; background: rgba(0, 0, 0, 0.2); padding: 20px; border-radius: 12px; margin-bottom: 25px; font-size: 13px; line-height: 1.7; border: 1px solid rgba(255,255,255,0.1); color: #cbd5e0;">
+            <b style="color: #63b3ed; font-size: 15px;">📜 Điều khoản & Cam kết:</b><br>
+            • <b>Nguồn cấp:</b> Nội dung được chia sẻ tại <b>tangaucungtui.github.io</b>.<br>
+            • <b>Bảo mật:</b> Liên kết tải xuống được bảo mật bằng <b>Dấu thời gian Blockchain</b> và mã băm <b>SHA-256</b>.<br>
+            • <b>Cam kết:</b> Hệ thống sẽ tự động chuyển hướng bạn đến liên kết VIP ngay sau khi xác nhận thanh toán thành công.<br>
+            • <b>Hỗ trợ:</b> Mọi sự đóng góp từ bạn đều là tự nguyện. Cảm ơn bạn đã đồng hành cùng Nin!
         </div>
 
         <div style="display: flex; justify-content: space-between; margin-bottom: 30px; gap: 10px;">
@@ -46,7 +47,6 @@
             <input type="hidden" name="item_name" value="Support Gift for Nin Music">
             <input type="hidden" name="amount" id="pp-amount" value="1.00">
             <input type="hidden" name="currency_code" value="USD">
-            
             <input type="hidden" name="return" id="pp-return" value="">
             <input type="hidden" name="rm" value="2">
 
@@ -66,8 +66,8 @@
 
 <div id="loading-ui" style="display:none; width: 100%; min-height: 100vh; background: #1a365d; color: white; font-family: sans-serif; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
     <div style="font-size: 60px;">🚀</div>
-    <h2 style="color: #68d391;">CẢM ƠN BẠN ĐÃ ỦNG HỘ NIN!</h2>
-    <p>Đang xác thực và mở liên kết tải xuống, vui lòng đợi...</p>
+    <h2 style="color: #68d391;">THANH TOÁN THÀNH CÔNG!</h2>
+    <p>Đang chuẩn bị liên kết tải xuống dành riêng cho bạn, vui lòng đợi...</p>
     <div style="width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #63b3ed; border-radius: 50%; animation: spin 1s linear infinite; margin-top: 20px; display: inline-block;"></div>
 </div>
 
@@ -80,13 +80,11 @@
     const songId = urlParams.get('id');
     const status = urlParams.get('status');
 
-    // Thiết lập URL quay về cho PayPal
     if (songId) {
         const currentUrl = window.location.origin + window.location.pathname;
         document.getElementById('pp-return').value = currentUrl + "?status=success&id=" + encodeURIComponent(songId);
     }
 
-    // Xử lý sau khi thanh toán thành công
     if (status === 'success' && songId) {
         document.getElementById('main-ui').style.display = 'none';
         document.getElementById('loading-ui').style.display = 'flex';
@@ -95,11 +93,9 @@
         }, 1500);
     }
 
-    // Chuyển đổi mức giá
     function setPrice(amt, el) {
         document.getElementById('pp-amount').value = amt + ".00";
         document.getElementById('disp-amt').innerText = amt;
-        
         const amttxt = document.querySelectorAll('.current-amt');
         amttxt.forEach(t => t.innerText = amt);
 
