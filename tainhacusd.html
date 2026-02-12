@@ -3,111 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ủng hộ Jack Wang Music</title>
+    <title>Ủng hộ Nin Music</title>
 </head>
 <body style="margin: 0; padding: 0; background: #1a365d;">
 
-<div id="unlock-container" style="width: 100%; min-height: 100vh; background: #1a365d; color: #ffffff; font-family: 'Segoe UI', Arial, sans-serif; display: flex; flex-direction: column; align-items: center; padding: 40px 15px; box-sizing: border-box; margin: 0 auto;">
+<div id="main-ui" style="width: 100%; min-height: 100vh; color: #ffffff; font-family: 'Segoe UI', Arial, sans-serif; display: flex; flex-direction: column; align-items: center; padding: 30px 15px; box-sizing: border-box;">
     
     <div style="max-width: 550px; width: 100%; text-align: center;">
         
-        <div id="pay-zone" style="display: block;">
-            <div style="font-size: 60px; margin-bottom: 10px;">☕</div>
-            <h3 style="color: #63b3ed; font-size: 28px; text-transform: uppercase; letter-spacing: 2px; margin: 10px 0;">Ủng hộ mình ly cafe?</h3>
-            <p style="margin-bottom: 30px; opacity: 0.9;">Tặng cafe để nhận Link Tải Nhạc VIP ngay lập tức</p>
+        <div style="font-size: 60px; margin-bottom: 10px;">☕</div>
+        <h3 style="color: #63b3ed; font-size: clamp(24px, 5vw, 32px); text-transform: uppercase; margin: 0; letter-spacing: 2px;">Mời Nin một ly cà phê?</h3>
+        <p style="font-size: 16px; opacity: 0.8; margin: 15px 0 25px 0;">Sự ủng hộ của bạn giúp Nin có thêm động lực sáng tạo!</p>
 
-            <div style="display: flex; gap: 10px; margin-bottom: 25px;">
-                <button type="button" onclick="showTab('vn')" id="tab-vn" style="flex: 1; padding: 15px; border-radius: 12px; border: 2px solid #63b3ed; background: #3182ce; color: white; cursor: pointer; font-weight: bold;">VIỆT NAM (QR)</button>
-                <button type="button" onclick="showTab('intl')" id="tab-intl" style="flex: 1; padding: 15px; border-radius: 12px; border: 2px solid transparent; background: rgba(255,255,255,0.1); color: white; cursor: pointer; font-weight: bold;">QUỐC TẾ (PayPal)</button>
-            </div>
-
-            <div id="content-vn" style="display: block; text-align: left; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border: 1px solid rgba(99, 179, 237, 0.3);">
-                <p style="color: #f1c40f; font-weight: bold; margin-top: 0;">Hướng dẫn nhận Link:</p>
-                <ul style="font-size: 14px; line-height: 1.8; color: #e2e8f0;">
-                    <li>Quét mã QR dưới đây để ủng hộ (ACB).</li>
-                    <li>Mức tặng: <b style="color: #63b3ed;">20,000 VNĐ</b>.</li>
-                    <li>Sau khi chuyển, nhấn nút <b>XÁC NHẬN</b> phía dưới.</li>
-                </ul>
-                <div style="text-align: center; margin: 20px 0; background: white; padding: 15px; border-radius: 15px;">
-                    <img src="https://img.vietqr.io/image/ACB-5447287-compact.jpg?amount=20000&addInfo=CAFE%20MUSIC&accountName=JACK%20WANG" style="max-width: 100%; height: auto; border-radius: 5px;">
-                </div>
-                <button id="btn-vn-confirm" onclick="unlockNow(this)" style="background: #28a745; color: white; border: none; padding: 18px; border-radius: 50px; width: 100%; font-weight: bold; cursor: pointer; font-size: 18px;">XÁC NHẬN ĐÃ GỬI & TẢI NHẠC</button>
-            </div>
-
-            <div id="content-intl" style="display: none; text-align: left; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border: 1px solid rgba(99, 179, 237, 0.3);">
-                <p style="color: #63b3ed; font-weight: bold; margin-top: 0;">International Support:</p>
-                <p style="font-size: 14px; color: #e2e8f0; margin-bottom: 20px;">Support $1 via PayPal. Link will appear after payment.</p>
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                    <input type="hidden" name="business" value="jackwang1368@gmail.com">
-                    <input type="hidden" name="cmd" value="_xclick">
-                    <input type="hidden" name="item_name" value="Voluntary Gift - Jack Wang Music">
-                    <input type="hidden" name="amount" value="1.00">
-                    <input type="hidden" name="currency_code" value="USD">
-                    <input type="hidden" name="return" value="https://discoverywithme.github.io/indexvn.html?status=success">
-                    <button type="submit" style="background: #0070ba; color: white; border: none; padding: 18px; border-radius: 50px; width: 100%; font-weight: bold; cursor: pointer; font-size: 18px;">DONATE $1 VIA PAYPAL</button>
-                </form>
-            </div>
-
-            <div style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-                <div style="min-height: 250px;">
-                    <script async="async" data-cfasync="false" src="https://pl28656382.effectivegatecpm.com/15c0cdf511a57cf02c31f89f15bdf9d9/invoke.js"></script>
-                    <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9"></div>
-                </div>
+        <div style="text-align: left; background: rgba(251, 211, 141, 0.15); border: 1px dashed #fbd38d; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+            <h4 style="color: #fbd38d; margin: 0 0 10px 0; display: flex; align-items: center; font-size: 16px;">
+                <span style="margin-right: 8px;">💳</span> CÁCH TẶNG QUÀ (KHÔNG CẦN PAYPAL)
+            </h4>
+            <div style="font-size: 13px; line-height: 1.6; color: #e2e8f0;">
+                1️⃣ Bấm nút <b>TẶNG NIN $<span class="current-amt">1</span></b> ở dưới.<br>
+                2️⃣ Chọn dòng <b>"Thanh toán bằng thẻ"</b> (hoặc <i>Pay with Debit or Credit Card</i>).<br>
+                3️⃣ Nhập số thẻ <b>Visa, Mastercard</b> hoặc <b>ATM Napas</b> của bạn để hoàn tất.<br>
+                <span style="color: #68d391;">✅ An toàn - Không cần đăng ký hay đăng nhập PayPal.</span>
             </div>
         </div>
 
-        <div id="pass-zone" style="display: none; padding: 40px 0;">
-            <div style="font-size: 80px;">🎊</div>
-            <h3 style="color: #68d391;">CẢM ƠN BẠN RẤT NHIỀU!</h3>
-            <p style="color: #f1c40f; font-weight: bold; font-size: 18px; margin-bottom: 30px;">Link tải nhạc VIP của bạn đã sẵn sàng:</p>
-            <a href="https://1024terabox.com/s/1_XPau_RB1qXG3W1pvGyX2g" target="_blank" style="text-decoration: none;">
-                <button style="background: #28a745; color: white; border: none; padding: 25px 40px; border-radius: 50px; cursor: pointer; font-weight: bold; font-size: 22px; width: 100%;">
-                    TẢI NHẠC NGAY (VIP) 📥
-                </button>
-            </a>
+        <div style="text-align: left; background: rgba(0, 0, 0, 0.2); padding: 15px; border-radius: 12px; margin-bottom: 25px; font-size: 12px; line-height: 1.6; border: 1px solid rgba(255,255,255,0.1); color: #cbd5e0;">
+            <b style="color: #63b3ed;">📜 Lưu ý:</b><br>
+            • Nhạc được cung cấp bởi <b>Nin</b>. Ghi nguồn <i>discoverywithme.github.io</i> khi sử dụng.<br>
+            • Hệ thống tự động mở link tải VIP ngay sau khi thanh toán thành công.<br>
+            • Mọi sự hỗ trợ đều là tự nguyện để duy trì hoạt động của Nin.
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 30px; gap: 10px;">
+            <div onclick="setPrice(1, this)" style="background: #3182ce; color: #fff; padding: 15px; border-radius: 15px; cursor: pointer; flex: 1; font-weight: bold; border: 2px solid #63b3ed; font-size: 18px;" class="p-btn">1 ☕</div>
+            <div onclick="setPrice(3, this)" style="background: rgba(255,255,255,0.1); color: #fff; padding: 15px; border-radius: 15px; cursor: pointer; flex: 1; font-weight: bold; border: 2px solid transparent; font-size: 18px;" class="p-btn">3 ☕</div>
+            <div onclick="setPrice(5, this)" style="background: rgba(255,255,255,0.1); color: #fff; padding: 15px; border-radius: 15px; cursor: pointer; flex: 1; font-weight: bold; border: 2px solid transparent; font-size: 18px;" class="p-btn">5 ☕</div>
+        </div>
+
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="paypal-form">
+            <input type="hidden" name="business" value="jackwang1368@gmail.com">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="item_name" value="Support Gift for Nin Music">
+            <input type="hidden" name="amount" id="pp-amount" value="1.00">
+            <input type="hidden" name="currency_code" value="USD">
+            
+            <input type="hidden" name="return" id="pp-return" value="">
+            <input type="hidden" name="rm" value="2">
+
+            <button type="submit" onclick="window.open('https://www.effectivegatecpm.com/v4huzy068?key=d0119603befa4a39f5f4a88cbc7ad840', '_blank')" 
+                style="background: #3182ce; color: #ffffff; border: none; padding: 20px; border-radius: 50px; font-weight: bold; cursor: pointer; width: 100%; font-size: 18px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-transform: uppercase;">
+                TẶNG NIN $<span id="disp-amt">1</span> & TẢI XUỐNG
+            </button>
+        </form>
+
+        <div style="margin-top: 40px; min-height: 250px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            <script async="async" data-cfasync="false" src="https://pl28656382.effectivegatecpm.com/15c0cdf511a57cf02c31f89f15bdf9d9/invoke.js"></script>
+            <div id="container-15c0cdf511a57cf02c31f89f15bdf9d9"></div>
         </div>
 
     </div>
 </div>
 
+<div id="loading-ui" style="display:none; width: 100%; min-height: 100vh; background: #1a365d; color: white; font-family: sans-serif; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+    <div style="font-size: 60px;">🚀</div>
+    <h2 style="color: #68d391;">CẢM ƠN BẠN ĐÃ ỦNG HỘ NIN!</h2>
+    <p>Đang xác thực và mở liên kết tải xuống, vui lòng đợi...</p>
+    <div style="width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #63b3ed; border-radius: 50%; animation: spin 1s linear infinite; margin-top: 20px; display: inline-block;"></div>
+</div>
+
+<style>
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+</style>
+
 <script>
-    function showTab(type) {
-        if(type === 'vn') {
-            document.getElementById('content-vn').style.display = 'block';
-            document.getElementById('content-intl').style.display = 'none';
-            document.getElementById('tab-vn').style.background = '#3182ce';
-            document.getElementById('tab-vn').style.border = '2px solid #63b3ed';
-            document.getElementById('tab-intl').style.background = 'rgba(255,255,255,0.1)';
-            document.getElementById('tab-intl').style.border = '2px solid transparent';
-        } else {
-            document.getElementById('content-vn').style.display = 'none';
-            document.getElementById('content-intl').style.display = 'block';
-            document.getElementById('tab-intl').style.background = '#3182ce';
-            document.getElementById('tab-intl').style.border = '2px solid #63b3ed';
-            document.getElementById('tab-vn').style.background = 'rgba(255,255,255,0.1)';
-            document.getElementById('tab-vn').style.border = '2px solid transparent';
+    const urlParams = new URLSearchParams(window.location.search);
+    const songId = urlParams.get('id');
+    const status = urlParams.get('status');
+
+    // Thiết lập URL quay về cho PayPal
+    if (songId) {
+        const currentUrl = window.location.origin + window.location.pathname;
+        document.getElementById('pp-return').value = currentUrl + "?status=success&id=" + encodeURIComponent(songId);
+    }
+
+    // Xử lý sau khi thanh toán thành công
+    if (status === 'success' && songId) {
+        document.getElementById('main-ui').style.display = 'none';
+        document.getElementById('loading-ui').style.display = 'flex';
+        setTimeout(function() {
+            window.location.href = songId;
+        }, 1500);
+    }
+
+    // Chuyển đổi mức giá
+    function setPrice(amt, el) {
+        document.getElementById('pp-amount').value = amt + ".00";
+        document.getElementById('disp-amt').innerText = amt;
+        
+        const amttxt = document.querySelectorAll('.current-amt');
+        amttxt.forEach(t => t.innerText = amt);
+
+        var btns = document.getElementsByClassName('p-btn');
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].style.background = "rgba(255,255,255,0.1)";
+            btns[i].style.borderColor = "transparent";
         }
-    }
-
-    function unlockNow(btn) {
-        window.open('https://www.effectivegatecpm.com/v4huzy068?key=d0119603befa4a39f5f4a88cbc7ad840', '_blank');
-        btn.disabled = true;
-        btn.style.background = "#4a5568";
-        let seconds = 5;
-        let timer = setInterval(function() {
-            btn.innerHTML = "ĐANG KIỂM TRA GIAO DỊCH... (" + seconds + "s)";
-            seconds--;
-            if (seconds < 0) {
-                clearInterval(timer);
-                document.getElementById('pay-zone').style.display = 'none';
-                document.getElementById('pass-zone').style.display = 'block';
-            }
-        }, 1000);
-    }
-
-    if (window.location.search.indexOf('status=success') > -1) {
-        document.getElementById('pay-zone').style.display = 'none';
-        document.getElementById('pass-zone').style.display = 'block';
+        el.style.background = "#3182ce";
+        el.style.borderColor = "#63b3ed";
     }
 </script>
 
